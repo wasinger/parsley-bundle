@@ -43,7 +43,7 @@ class DataClassReader implements ReaderInterface
         }
 
         $constraints = [];
-        foreach ($metadata->getPropertyMetadata($form->getName()) as $propertyMetadatum) {
+        foreach ($metadata->getPropertyMetadata((string) $form->getName()) as $propertyMetadatum) {
             $constraints = array_merge($constraints, $propertyMetadatum->findConstraints($metadata->getDefaultGroup()));
         }
 
